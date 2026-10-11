@@ -71,6 +71,8 @@ function moveProjectUnderline(button) {
         `translateX(${button.offsetLeft}px)`;
 }
 
+const projectDetails = document.querySelector(".project-details");
+
 function selectProject(key) {
     const project = projects[key];
 
@@ -87,6 +89,17 @@ function selectProject(key) {
   );
 
   moveProjectUnderline(activeButton);
+
+  if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    for (const animation of projectDetails.getAnimations()) {
+      animation.cancel();
+    }
+
+    projectDetails.animate(
+      [{ opacity: 0 }, { opacity: 1 }],
+      { duration: 220, easing: "ease-out" }
+    );
+  }
 }
 
 for (const button of projectButtons) {
