@@ -2,10 +2,6 @@ body {
     background-color: #151719;
     color: #B9BDBC;
     margin: 0;
-
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
 }
 
 h1 {
@@ -24,4 +20,36 @@ h1 span {
 h1 span + span {
     margin-top: 25px;
     margin-left: 0.86em;
+}
+
+.screen {
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+.topbar {
+    position: fixed;
+    top: 32px;
+    right: 42px;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.topbar a {
+    color: #747F87;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.topbar a:hover {
+    color: #B9BDBC;
+}
+
+.topbar a[aria-current="page"] {
+    color: #B9BDBC;
+    font-weight: 700;
 }
