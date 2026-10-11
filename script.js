@@ -117,3 +117,15 @@ window.addEventListener("resize", () => {
 
   moveProjectUnderline(activeButton);
 })
+
+const catScreen = document.querySelector(".cat-screen");
+const topbar = document.querySelector(".topbar");
+
+const catObserver = new IntersectionObserver((entries) => {
+    const isVisible = entries[0].intersectionRatio >= 0.55;
+    topbar.classList.toggle("is-hidden", isVisible);
+}, {
+    threshold: 0.55,
+});
+
+catObserver.observe(catScreen);
