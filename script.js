@@ -63,6 +63,14 @@ const projectButtons = document.querySelectorAll(".project-tab");
 const projectDescription = document.querySelector("#project-description");
 const projectLink = document.querySelector("#project-link")
 
+const projectUnderline = document.querySelector(".project-underline");
+
+function moveProjectUnderline(button) {
+    projectUnderline.style.width = `${button.offsetWidth}px`;
+    projectUnderline.style.transform =
+        `translateX(${button.offsetLeft}px)`;
+}
+
 function selectProject(key) {
     const project = projects[key];
 
@@ -73,6 +81,12 @@ function selectProject(key) {
         const isSelected = button.dataset.project === key;
         button.setAttribute("aria-pressed", String(isSelected));
     }
+
+  const activeButton = document.querySelector(
+    '.project-tab[aria-pressed="true"]'
+  );
+
+  moveProjectUnderline(activeButton);
 }
 
 for (const button of projectButtons) {
@@ -82,3 +96,11 @@ for (const button of projectButtons) {
 }
 
 selectProject("selfad");
+
+window.addEventListener("resize", () => {
+  const activeButton = document.querySelector(
+    '.project-tab[aria-pressed="true"]'
+  );
+
+  moveProjectUnderline(activeButton);
+})

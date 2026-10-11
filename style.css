@@ -145,6 +145,7 @@ h2 {
     display: flex;
     gap: 35px;
     border-bottom: 1px solid #747F8730;
+    position: relative;
 }
 
 .project-tab {
@@ -187,4 +188,14 @@ h2 {
 .project-tab[aria-pressed="true"] {
     color: #B9BDBC;
     font-weight: 700;
+}
+
+.project-underline {
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    height: 2px;
+    width: 0;
+    background: #B9BDBC;
+    transition: transform 0.3s ease, width 0.3s ease;
 }
