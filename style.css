@@ -136,3 +136,55 @@ h2 {
     color: #B9BDBC;
     font-variant-numeric: tabular-nums;
 }
+
+.content {
+    width: 100%;
+}
+
+.project-tabs {
+    display: flex;
+    gap: 35px;
+    border-bottom: 1px solid #747F8730;
+}
+
+.project-tab {
+    background: none;
+    border: none;
+    padding: 0 0 17px;
+    color: #747F87;
+    font: inherit;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.project-tab:hover {
+    color: #B9BDBC;
+}
+
+.project-details {
+    padding-top: 36px;
+    min-height: 185px;
+}
+
+.project-details p {
+    max-width: 810px;
+    margin-bottom: 28px;
+    font-size: clamp(20px, 2.1vw, 32px);
+    line-height: 1.5;
+}
+
+#project-link {
+    color: #747F87;
+    font-size: 14px;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+#project-link:hover {
+    color: #B9BDBC;
+}
+
+.project-tab[aria-pressed="true"] {
+    color: #B9BDBC;
+    font-weight: 700;
+}

@@ -39,3 +39,46 @@ const observer = new IntersectionObserver((entries) => {
 for (const section of sections) {
     observer.observe(section);
 }
+
+const projects = {
+    selfad: {
+        description: "CTF platform aimed at individual participation in an Attack-Defense format.",
+        url: "https://github.com/max-cyou/SelfAD",
+    },
+    eblangpt: {
+        description: "EblanGPT Telegram bot.",
+        url: "https://github.com/max-cyou/eblangpt-bot",
+    },
+    radar: {
+        description: "Undetected CS2 browser based radar cheat ported on Linux",
+        url: "https://github.com/max-cyou/cs2-linux-webradar",
+    },
+    ctf: {
+        description: "Official challenge source archive for J2W Autumn CTF, organized by the jmp2win team.",
+        url: "https://github.com/max-cyou/j2w-autumn-ctf",
+    },
+};
+
+const projectButtons = document.querySelectorAll(".project-tab");
+const projectDescription = document.querySelector("#project-description");
+const projectLink = document.querySelector("#project-link")
+
+function selectProject(key) {
+    const project = projects[key];
+
+    projectDescription.textContent = project.description;
+    projectLink.href = project.url;
+
+    for (const button of projectButtons) {
+        const isSelected = button.dataset.project === key;
+        button.setAttribute("aria-pressed", String(isSelected));
+    }
+}
+
+for (const button of projectButtons) {
+    button.addEventListener("click", () => {
+        selectProject(button.dataset.project);
+    });
+}
+
+selectProject("selfad");
