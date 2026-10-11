@@ -1,0 +1,27 @@
+body {
+    background-color: #151719;
+    color: #B9BDBC;
+    margin: 0;
+
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+h1 {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: clamp(80px, 20vw, 320px);
+    font-weight: 900;
+    line-height: 0.8;
+    letter-spacing: -0.08em;
+}
+
+h1 span {
+    display: block;
+}
+
+h1 span + span {
+    margin-top: 25px;
+    margin-left: 0.86em;
+}
