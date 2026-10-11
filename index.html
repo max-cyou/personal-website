@@ -9,13 +9,17 @@
     </head>
     <body>
         <nav class="topbar">
-            <a href="#index" aria-current="page">index</a>
+            <a href="#index" data-label="index" aria-label="index"
+               aria-current="page"><span>index</span></a>
             <span>/</span>
-            <a href="#about">about</a>
+            <a href="#about" data-label="about"
+               aria-label="about"><span>about</span></a>
             <span>/</span>
-            <a href="#projects">projects</a>
+            <a href="#projects" data-label="projects"
+               aria-label="projects"><span>projects</span></a>
             <span>/</span>
-            <a href="#contacts">contacts</a>
+            <a href="#contacts" data-label="contacts"
+               aria-label="contacts"><span>contacts</span></a>
         </nav>
         <section id="index" class="screen">
             <h1>
@@ -36,12 +40,26 @@
                     Cybersecurity Enthusiast<br>
                     and Python Developer.
                 </p>
+
                 <div class="about-meta">
-                    <span>Russia, Krasnodar</span>
-                    <span>
-                        Europe/Moscow (UTC+3) —
-                        <time id="moscow-time"></time>
-                    </span>
+                    <div class="meta-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <path d="M19 10c0 5-7 11-7 11S5 15 5 10a7 7 0 1 1 14 0Z"/>
+                            <circle cx="12" cy="10" r="2.5"/>
+                        </svg>
+                        <span>Russia, Krasnodar</span>
+                    </div>
+
+                    <div class="meta-item">
+                        <svg viewBox="0 0 24 24" aria-hidden="true">
+                            <circle cx="12" cy="12" r="9"/>
+                            <path d="M12 7v5l3 2"/>
+                        </svg>
+                        <span>
+                            Europe/Moscow (UTC+3) —
+                            <time id="moscow-time"></time>
+                        </span>
+                    </div>
                 </div>
             </div>
         </section>
@@ -78,12 +96,21 @@
                        href="https://t.me/vatnouser"
                        target="_blank"
                        rel="noopener noreferrer">
-                        <span>telegram</span>
+                           <span class="contact-service">
+                               <img src="assets/telegram.svg" alt="">
+                               telegram
+                           </span>
                         <span class="contact-address">t.me/vatnouser ⟶</span>
                     </a>
 
                     <a class="contact-link" href="mailto:idk@maxcyou.ru">
-                        <span>email</span>
+                        <span class="contact-service">
+                            <svg viewBox="0 0 24 24" aria-hidden="true">
+                                <rect x="3" y="5" width="18" height="14" rx="2"/>
+                                <path d="m3 7 9 6 9-6"/>
+                            </svg>
+                            email
+                        </span>
                         <span class="contact-address">idk@maxcyou.ru ⟶</span>
                     </a>
 
@@ -91,7 +118,15 @@
                        href="https://github.com/max-cyou"
                        target="_blank"
                        rel="noopener noreferrer">
-                        <span>github</span>
+                           <span class="contact-service">
+                               <svg viewBox="0 0 24 24" aria-hidden="true">
+                                   <circle cx="7" cy="5" r="2"/>
+                                   <circle cx="7" cy="19" r="2"/>
+                                   <circle cx="17" cy="6" r="2"/>
+                                   <path d="M7 7v10m10-9v2a4 4 0 0 1-4 4H7"/>
+                               </svg>
+                               github
+                           </span>
                         <span class="contact-address">max-cyou ⟶</span>
                     </a>
                 </div>

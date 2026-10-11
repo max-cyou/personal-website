@@ -96,7 +96,6 @@ h1 span + span {
 
 .topbar a[aria-current="page"] {
     color: #B9BDBC;
-    font-weight: 700;
 }
 
 .content-screen {
@@ -326,4 +325,93 @@ h2 {
 
 .topbar.is-hidden {
     visibility: hidden;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+
+.meta-item svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.contact-service {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.contact-service img {
+    width: 18px;
+    height: 18px;
+    filter: invert(1);
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+
+.contact-link:hover .contact-service img {
+    opacity: 0.8;
+}
+
+.contact-service svg {
+    width: 18px;
+    height: 18px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.5;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.topbar a {
+    display: inline-grid;
+}
+
+.topbar a span,
+.topbar a::after {
+    grid-area: 1 / 1;
+    transition: opacity 0.25s;
+}
+
+.topbar a::after {
+    content: attr(data-label);
+    font-weight: 700;
+    opacity: 0;
+}
+
+.topbar a[aria-current="page"] span {
+    opacity: 0;
+}
+
+.topbar a[aria-current="page"]::after {
+    opacity: 1;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 1px solid #B9BDBC;
+    outline-offset: 6px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .project-underline,
+    .topbar a,
+    .topbar a span,
+    .topbar a::after,
+    .project-tab,
+    .scroll-down,
+    #project-link,
+    .contact-address,
+    .contact-service img {
+        transition: none;
+    }
 }
