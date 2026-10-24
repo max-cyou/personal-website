@@ -41,6 +41,10 @@ for (const section of sections) {
 }
 
 const projects = {
+    pyfreq: {
+        description: "API for answering multiple-choice questions by ranking answer options against web search results.",
+        url: "https://github.com/max-cyou/PyFreq",
+    },
     selfad: {
         description: "CTF platform aimed at individual participation in an Attack-Defense format.",
         url: "https://github.com/max-cyou/SelfAD",
