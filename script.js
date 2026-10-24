@@ -44,6 +44,7 @@ const projects = {
     pyfreq: {
         description: "API for answering multiple-choice questions by ranking answer options against web search results.",
         url: "https://github.com/max-cyou/PyFreq",
+        demo: "/pyfreq-demo",
     },
     selfad: {
         description: "CTF platform aimed at individual participation in an Attack-Defense format.",
@@ -66,6 +67,7 @@ const projects = {
 const projectButtons = document.querySelectorAll(".project-tab");
 const projectDescription = document.querySelector("#project-description");
 const projectLink = document.querySelector("#project-link")
+const projectDemo = document.querySelector("#project-demo");
 
 const projectUnderline = document.querySelector(".project-underline");
 
@@ -82,6 +84,8 @@ function selectProject(key) {
 
     projectDescription.textContent = project.description;
     projectLink.href = project.url;
+    projectDemo.hidden = !project.demo;
+    if (project.demo) projectDemo.href = project.demo;
 
     for (const button of projectButtons) {
         const isSelected = button.dataset.project === key;

@@ -182,14 +182,20 @@ h2 {
     line-height: 1.5;
 }
 
-#project-link {
+#project-link,
+#project-demo {
     color: #747F87;
     font-size: 14px;
     text-decoration: none;
     transition: color 0.2s;
 }
 
-#project-link:hover {
+#project-demo {
+    margin-left: 24px;
+}
+
+#project-link:hover,
+#project-demo:hover {
     color: #B9BDBC;
 }
 
@@ -423,6 +429,7 @@ button:focus-visible {
     .project-tab,
     .scroll-down,
     #project-link,
+    #project-demo,
     .contact-address,
     .contact-service img {
         transition: none;
